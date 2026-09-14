@@ -2,25 +2,18 @@ name = "cyberdudebivash-connect-hub"
 compatibility_date = "2026-09-01"
 pages_build_output_dir = "dist"
 
-# Production-hardened routing
-workers_dev = false
-preview_urls = false
-
-# Static assets (fixed binding name for Wrangler 4.107+)
 [assets]
 binding = "STATIC_ASSETS"
 directory = "./dist"
 
-# D1 database
 [[d1_databases]]
 binding = "DB"
 database_name = "cyberdudebivash-connect-db"
 database_id = "fa3a6238-403f-4843-bf4c-490cd4653f8a"
 
-# KV namespace (session store)
 [[kv_namespaces]]
 binding = "SESSION"
-id = "224b6aad50954b96a6d47742a8dda419"
+id = "3f326bfb7c194efb898e7b5326baa586"
 
 [vars]
 PUBLIC_BRAND_NAME = "CYBERDUDEBIVASH Connect Hub"
