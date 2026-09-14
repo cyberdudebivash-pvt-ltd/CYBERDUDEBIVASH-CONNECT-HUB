@@ -1,30 +1,109 @@
 ---
+const FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
+const formAction = `https://formspree.io/f/${FORMSPREE_ID}`;
+const whatsappNumber = '918179881447';
+const whatsappText = encodeURIComponent('Hi, I would like to discuss cybersecurity services for my organization.');
 ---
-<form id="contact-form" class="space-y-4 max-w-2xl mx-auto">
-  <div class="grid md:grid-cols-2 gap-4">
-    <input type="text" name="name" required placeholder="Your Name *" class="w-full px-4 py-3 bg-[#1A2F4A]/50 border border-[#1A2F4A] rounded-lg text-white placeholder-gray-500 focus:border-[#00B4D8] focus:outline-none" />
-    <input type="email" name="email" required placeholder="Email Address *" class="w-full px-4 py-3 bg-[#1A2F4A]/50 border border-[#1A2F4A] rounded-lg text-white placeholder-gray-500 focus:border-[#00B4D8] focus:outline-none" />
+
+<div class="max-w-2xl mx-auto">
+  <!-- WhatsApp fast-track -->
+  <div class="mb-6 p-4 rounded-lg border border-[var(--color-border-hi)] bg-[var(--color-surface)] flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div>
+      <div class="text-sm font-semibold text-ink mb-1">Need an answer fast?</div>
+      <div class="text-xs text-ink-soft">Message us directly on WhatsApp — 15-minute response time.</div>
+    </div>
+    <a
+      href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
+      target="_blank"
+      rel="noopener"
+      class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[var(--color-success)] text-[var(--color-void)] font-semibold text-sm hover:opacity-90 transition-opacity"
+    >
+      <span>WhatsApp Us</span>
+      <span>→</span>
+    </a>
   </div>
-  <div class="grid md:grid-cols-2 gap-4">
-    <input type="text" name="company" placeholder="Company" class="w-full px-4 py-3 bg-[#1A2F4A]/50 border border-[#1A2F4A] rounded-lg text-white placeholder-gray-500 focus:border-[#00B4D8] focus:outline-none" />
-    <input type="tel" name="phone" placeholder="Phone / WhatsApp" class="w-full px-4 py-3 bg-[#1A2F4A]/50 border border-[#1A2F4A] rounded-lg text-white placeholder-gray-500 focus:border-[#00B4D8] focus:outline-none" />
-  </div>
-  <select name="service_interest" class="w-full px-4 py-3 bg-[#1A2F4A]/50 border border-[#1A2F4A] rounded-lg text-white focus:border-[#00B4D8] focus:outline-none">
-    <option value="">What are you interested in?</option>
-    <option value="mdr">Managed Detection & Response (MDR)</option>
-    <option value="threat-hunt">Threat Hunt-as-a-Service</option>
-    <option value="ir-retainer">Incident Response Retainer</option>
-    <option value="zero-trust">Zero Trust Architecture</option>
-    <option value="api-audit">API Security Audit</option>
-    <option value="ddos">DDoS Readiness & WAF</option>
-    <option value="other">Other</option>
-  </select>
-  <textarea name="message" rows="5" placeholder="Tell us about your security needs..." class="w-full px-4 py-3 bg-[#1A2F4A]/50 border border-[#1A2F4A] rounded-lg text-white placeholder-gray-500 focus:border-[#00B4D8] focus:outline-none resize-none"></textarea>
-  <button type="submit" class="w-full py-3 bg-[#00B4D8] text-[#0A1929] font-semibold rounded-lg hover:bg-[#00E676] transition-colors">
-    Send Message
-  </button>
-  <p id="form-status" class="text-center text-sm hidden"></p>
-</form>
+
+  <form
+    id="contact-form"
+    action={formAction}
+    method="POST"
+    class="space-y-4"
+  >
+    <div class="grid md:grid-cols-2 gap-4">
+      <input
+        type="text"
+        name="name"
+        required
+        placeholder="Your Name *"
+        class="w-full px-4 py-3 bg-[#1A2F4A]/50 border border-[#1A2F4A] rounded-lg text-white placeholder-gray-500 focus:border-[#00B4D8] focus:outline-none"
+      />
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="Email Address *"
+        class="w-full px-4 py-3 bg-[#1A2F4A]/50 border border-[#1A2F4A] rounded-lg text-white placeholder-gray-500 focus:border-[#00B4D8] focus:outline-none"
+      />
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <input
+        type="text"
+        name="company"
+        placeholder="Company"
+        class="w-full px-4 py-3 bg-[#1A2F4A]/50 border border-[#1A2F4A] rounded-lg text-white placeholder-gray-500 focus:border-[#00B4D8] focus:outline-none"
+      />
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Phone / WhatsApp"
+        class="w-full px-4 py-3 bg-[#1A2F4A]/50 border border-[#1A2F4A] rounded-lg text-white placeholder-gray-500 focus:border-[#00B4D8] focus:outline-none"
+      />
+    </div>
+
+    <select
+      name="service_interest"
+      class="w-full px-4 py-3 bg-[#1A2F4A]/50 border border-[#1A2F4A] rounded-lg text-white focus:border-[#00B4D8] focus:outline-none"
+    >
+      <option value="">What are you interested in?</option>
+      <option value="mdr">Managed Detection & Response (MDR)</option>
+      <option value="threat-hunt">Threat Hunt-as-a-Service</option>
+      <option value="ir-retainer">Incident Response Retainer</option>
+      <option value="zero-trust">Zero Trust Architecture</option>
+      <option value="api-audit">API Security Audit</option>
+      <option value="ddos">DDoS Readiness & WAF</option>
+      <option value="other">Other</option>
+    </select>
+
+    <textarea
+      name="message"
+      rows="5"
+      placeholder="Tell us about your security needs..."
+      class="w-full px-4 py-3 bg-[#1A2F4A]/50 border border-[#1A2F4A] rounded-lg text-white placeholder-gray-500 focus:border-[#00B4D8] focus:outline-none resize-none"
+    ></textarea>
+
+    <!-- Honeypot for spam bots -->
+    <input
+      type="text"
+      name="_gotcha"
+      style="display:none"
+      tabindex="-1"
+      autocomplete="off"
+    />
+
+    <!-- Formspree config -->
+    <input type="hidden" name="_subject" value="New inquiry from CYBERDUDEBIVASH Connect Hub" />
+
+    <button
+      type="submit"
+      class="w-full py-3 bg-[#00B4D8] text-[#0A1929] font-semibold rounded-lg hover:bg-[#00E676] transition-colors"
+    >
+      Send Message
+    </button>
+
+    <p id="form-status" class="text-center text-sm hidden"></p>
+  </form>
+</div>
 
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement;
@@ -32,26 +111,28 @@
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(form));
+    const data = new FormData(form);
+
     status.textContent = 'Sending...';
-    status.className = 'text-center text-sm text-gray-400 mt-4';
+    status.className = 'text-center text-sm text-gray-400 mt-4 block';
 
     try {
-      const res = await fetch('/api/leads', {
+      const res = await fetch(form.action, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: data,
+        headers: { 'Accept': 'application/json' }
       });
+
       if (res.ok) {
-        status.textContent = '✓ Thank you! We will get back to you within 24 hours.';
-        status.className = 'text-center text-sm text-[#00E676] mt-4';
+        status.textContent = "✓ Message sent. We'll respond within 24 hours.";
+        status.className = 'text-center text-sm text-[#00E676] mt-4 block';
         form.reset();
       } else {
-        throw new Error('Failed');
+        throw new Error('Submission failed');
       }
-    } catch {
-      status.textContent = '⚠ Something went wrong. Please email contact@cyberdudebivash.in';
-      status.className = 'text-center text-sm text-red-400 mt-4';
+    } catch (err) {
+      status.textContent = '⚠ Something went wrong. Please try WhatsApp or email us directly.';
+      status.className = 'text-center text-sm text-[#FF3B5C] mt-4 block';
     }
   });
 </script>
