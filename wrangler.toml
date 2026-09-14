@@ -2,6 +2,11 @@ name = "cyberdudebivash-connect-hub"
 compatibility_date = "2026-09-01"
 pages_build_output_dir = "dist"
 
+# Fix: Use STATIC_ASSETS instead of reserved ASSETS
+[assets]
+binding = "STATIC_ASSETS"
+directory = "./dist"
+
 [[d1_databases]]
 binding = "DB"
 database_name = "cyberdudebivash-connect-db"
