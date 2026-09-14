@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+
+const releases = [
+  {
+    date: '2026-09',
+    title: 'CYBERDUDEBIVASH Launches Real-Time Threat Intelligence APIs for Security Teams & Developers',
+    href: 'https://intel.cyberdudebivash.com/api-docs',
+  },
+  {
+    date: '2026-09',
+    title: 'CYBERDUDEBIVASH Expands MSSP Program with White-Label Threat Intel Licensing',
+    href: '/contact',
+  },
+  {
+    date: '2026-08',
+    title: 'CYBERDUDEBIVASH Achieves MSME Udyam & Startup India Registration',
+    href: '/contact',
+  },
+];
+---
+<BaseLayout title="Press & Media" description="Press releases, media kit, and company information for CYBERDUDEBIVASH PRIVATE LIMITED.">
+  <NavBar />
+
+  <section class="pt-32 pb-12 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-[#00B4D8] text-sm font-semibold tracking-widest mb-4">PRESS & MEDIA</p>
+      <h1 class="text-4xl md:text-5xl font-bold">Newsroom</h1>
+      <p class="text-lg text-gray-400 mt-6">
+        Official announcements, media resources, and company information.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-8">Latest Announcements</h2>
+      <div class="space-y-4">
+        {releases.map(r => (
+          <a href={r.href} class="block bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A] hover:border-[#00B4D8] transition-colors">
+            <p class="text-[#00B4D8] text-sm font-mono">{r.date}</p>
+            <h3 class="font-semibold text-lg text-white mt-2">{r.title}</h3>
+            <span class="text-[#00B4D8] text-sm mt-3 inline-block">Read more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 px-6 bg-[#050F1A]">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-6">Media Contact</h2>
+      <div class="bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A]">
+        <p class="text-gray-300"><strong class="text-white">For press inquiries:</strong></p>
+        <p class="mt-2"><a href="mailto:bivash@cyberdudebivash.com" class="text-[#00B4D8]">bivash@cyberdudebivash.com</a></p>
+        <p class="mt-1"><a href="mailto:contact@cyberdudebivash.in" class="text-[#00B4D8]">contact@cyberdudebivash.in</a></p>
+        <p class="mt-1 text-gray-400">Phone / WhatsApp: +91 8179881447</p>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-12 mb-6">Company Boilerplate</h2>
+      <div class="bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A] text-gray-300 text-sm leading-relaxed">
+        <p><strong class="text-white">About CYBERDUDEBIVASH®</strong></p>
+        <p class="mt-3">CYBERDUDEBIVASH PRIVATE LIMITED is India's first AI-native cybersecurity company, delivering AI security, threat intelligence, SOC operations, MSSP services, and enterprise cyber defense to customers across the globe. Headquartered in Ragadi, Odisha, the company operates multiple platforms including the AI Security Hub, Sentinel APEX Threat Intelligence, and the official Tools Store.</p>
+        <p class="mt-3"><strong class="text-white">Compliance:</strong> GSTIN 21ARKPN8270G1ZP · MSME Udyam UDYAM-OD-19-0133456 · Startup India BHASKAR ID IN-0426-9439SC</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

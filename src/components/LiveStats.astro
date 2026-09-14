@@ -1,0 +1,30 @@
+---
+let stats = { cves: '—' };
+try {
+  const res = await fetch('https://intel.cyberdudebivash.com/api/v1/intel/latest.json');
+  if (res.ok) {
+    const data = await res.json();
+    stats.cves = data.count || data.total || '—';
+  }
+} catch (e) {}
+---
+<section class="py-12 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A]">
+      <p class="text-3xl font-bold text-[#00B4D8]">{stats.cves}</p>
+      <p class="text-xs text-gray-400 mt-1">CVEs Tracked Today</p>
+    </div>
+    <div class="bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A]">
+      <p class="text-3xl font-bold text-[#00B4D8]">265+</p>
+      <p class="text-xs text-gray-400 mt-1">Business Interactions</p>
+    </div>
+    <div class="bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A]">
+      <p class="text-3xl font-bold text-[#FFC107]">5.0</p>
+      <p class="text-xs text-gray-400 mt-1">Google Rating</p>
+    </div>
+    <div class="bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A]">
+      <p class="text-3xl font-bold text-[#00E676]">24/7</p>
+      <p class="text-xs text-gray-400 mt-1">SOC Monitoring</p>
+    </div>
+  </div>
+</section>

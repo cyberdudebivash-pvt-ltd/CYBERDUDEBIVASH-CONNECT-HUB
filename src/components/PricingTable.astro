@@ -1,0 +1,67 @@
+---
+const plans = [
+  {
+    name: 'Free',
+    price: '₹0',
+    period: 'forever',
+    features: ['100 API calls/day', 'Basic tools access', 'Community support', 'Public threat feed'],
+    cta: 'Sign Up',
+    href: '/contact',
+    highlight: false,
+  },
+  {
+    name: 'Pro',
+    price: '₹2,999',
+    period: 'per month',
+    features: ['10,000 API calls/day', 'Full tools access', 'Priority support', 'AI threat summaries', 'Email alerts'],
+    cta: 'Upgrade to Pro',
+    href: 'https://rzp.io/l/cdb-pro',
+    highlight: true,
+  },
+  {
+    name: 'Enterprise',
+    price: '₹9,999',
+    period: 'per month',
+    features: ['Unlimited API calls', 'All Pro features', 'Managed SOC access', 'MDR monitoring', 'Dedicated support', 'SLA guarantee'],
+    cta: 'Contact Sales',
+    href: '/contact',
+    highlight: false,
+  },
+  {
+    name: 'MSSP',
+    price: '₹19,999',
+    period: 'per month',
+    features: ['White-label threat intel', 'Unlimited API calls', 'All Enterprise features', 'Reseller rights', 'Custom integrations'],
+    cta: 'Become a Partner',
+    href: '/contact',
+    highlight: false,
+  },
+];
+---
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+  {plans.map(plan => (
+    <div class={`p-6 rounded-2xl border-2 transition-all ${plan.highlight ? 'border-[#00B4D8] bg-[#00B4D8]/5 scale-105' : 'border-[#1A2F4A] bg-[#1A2F4A]/30'}`}>
+      {plan.highlight && (
+        <div class="text-xs font-bold text-[#0A1929] bg-[#00B4D8] inline-block px-3 py-1 rounded-full mb-4">
+          MOST POPULAR
+        </div>
+      )}
+      <h3 class="text-xl font-bold text-white">{plan.name}</h3>
+      <div class="mt-4 mb-6">
+        <span class="text-3xl font-bold text-[#00B4D8]">{plan.price}</span>
+        <span class="text-sm text-gray-400 ml-2">{plan.period}</span>
+      </div>
+      <ul class="space-y-3 mb-6">
+        {plan.features.map(f => (
+          <li class="flex items-start text-sm text-gray-300">
+            <span class="text-[#00E676] mr-2">✓</span>
+            <span>{f}</span>
+          </li>
+        ))}
+      </ul>
+      <a href={plan.href} class={`block text-center py-3 rounded-lg font-semibold transition-colors ${plan.highlight ? 'bg-[#00B4D8] text-[#0A1929] hover:bg-[#00E676]' : 'border border-[#00B4D8] text-[#00B4D8] hover:bg-[#00B4D8]/10'}`}>
+        {plan.cta}
+      </a>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,23 @@
+---
+const nav = [
+  { name: 'Services', href: '/services' },
+  { name: 'Products', href: '/products' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'Press', href: '/press' },
+  { name: 'Contact', href: '/contact' },
+];
+---
+<nav class="fixed top-0 w-full bg-[#0A1929]/95 backdrop-blur-md border-b border-[#1A2F4A] z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <span class="text-xl font-bold text-[#00B4D8]">CYBERDUDEBIVASH</span>
+      <span class="text-xs text-gray-500 hidden md:inline">Connect Hub</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      {nav.map(item => (
+        <a href={item.href} class="text-sm text-gray-300 hover:text-[#00B4D8]">{item.name}</a>
+      ))}
+      <a href="/contact" class="px-4 py-2 bg-[#00B4D8] text-[#0A1929] font-semibold rounded-lg text-sm">Book a Call</a>
+    </div>
+  </div>
+</nav>

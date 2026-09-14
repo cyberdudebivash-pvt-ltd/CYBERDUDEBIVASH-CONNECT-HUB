@@ -1,0 +1,21 @@
+name = "cyberdudebivash-connect-hub"
+compatibility_date = "2026-09-01"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "cyberdudebivash-connect-db"
+database_id = "REPLACE_WITH_YOUR_D1_ID"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "REPLACE_WITH_YOUR_KV_ID"
+
+[vars]
+PUBLIC_BRAND_NAME = "CYBERDUDEBIVASH Connect Hub"
+PUBLIC_TAGLINE = "Connect. Protect. Grow."
+PUBLIC_INTEL_API = "https://intel.cyberdudebivash.com"
+PUBLIC_CONTACT_EMAIL = "contact@cyberdudebivash.in"
+PUBLIC_SALES_EMAIL = "bivash@cyberdudebivash.com"
+PUBLIC_PHONE = "+918179881447"
+PUBLIC_WHATSAPP = "918179881447"

@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+const services = [
+  { icon: '🛡️', title: 'Managed Detection & Response', description: '24/7 SOC monitoring, threat hunting, and incident response for your entire infrastructure.', price: 'From ₹49,999/month' },
+  { icon: '🎯', title: 'Threat Hunt-as-a-Service', description: 'Fixed-scope hunts for hidden threats that bypassed your existing security tools.', price: 'From ₹29,999/engagement' },
+  { icon: '🚨', title: 'Incident Response Retainer', description: 'Rapid IR when it matters most. Pre-negotiated terms, 1-hour SLA.', price: 'From ₹99,999/year' },
+  { icon: '🔐', title: 'Zero Trust Architecture', description: 'Identity-first security design. Microsegmentation, least privilege, continuous verification.', price: 'From ₹1,49,999/project' },
+  { icon: '🔍', title: 'API Security Audit', description: 'Comprehensive API security assessment. Find misconfigurations before attackers do.', price: 'From ₹49,999/audit' },
+  { icon: '⚡', title: 'DDoS Readiness & WAF Hardening', description: 'Protect uptime and customer trust with proactive DDoS readiness and WAF tuning.', price: 'From ₹7,999/month' },
+  { icon: '🤖', title: 'AI Red Team Simulation', description: 'Adversarial AI testing to find gaps in your ML models and AI-powered defenses.', price: 'From ₹79,999/project' },
+  { icon: '📊', title: 'SOC Advisory', description: 'Expert guidance to build or mature your Security Operations Center.', price: 'From ₹2,49,999/quarter' },
+  { icon: '🔬', title: 'Detection Engineering', description: 'Custom detection rules and playbooks built for your environment.', price: 'From ₹59,999/project' },
+];
+---
+<BaseLayout title="Services" description="Full catalog of CYBERDUDEBIVASH cybersecurity services — MDR, Threat Hunt, IR Retainer, Zero Trust, API Audit, and more.">
+  <NavBar />
+  <section class="pt-32 pb-16 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="text-[#00B4D8] text-sm font-semibold tracking-widest mb-4">OUR SERVICES</p>
+      <h1 class="text-4xl md:text-5xl font-bold">Enterprise Cybersecurity, Delivered.</h1>
+      <p class="text-lg text-gray-400 mt-6 max-w-2xl mx-auto">
+        From managed SOC operations to AI-powered threat hunting, we deliver security that scales with your business.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map(s => <ServiceCard {...s} />)}
+    </div>
+  </section>
+
+  <section class="py-20 px-6 bg-[#050F1A] mt-16">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold">Not sure which service fits?</h2>
+      <p class="text-gray-400 mt-4">Book a free 15-minute consultation and we'll recommend the right path.</p>
+      <a href="/contact" class="inline-block mt-8 px-8 py-3 bg-[#00B4D8] text-[#0A1929] font-semibold rounded-lg hover:bg-[#00E676] transition-colors">
+        Book a Free Call
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

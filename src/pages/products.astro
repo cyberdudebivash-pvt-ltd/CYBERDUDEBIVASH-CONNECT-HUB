@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+
+const apis = [
+  { name: 'Live CVE Feed', endpoint: '/api/v1/intel/latest.json', desc: 'Latest vulnerabilities with severity scores and affected products.' },
+  { name: 'APEX Threat Intel', endpoint: '/api/v1/intel/apex.json', desc: 'High-confidence threat intelligence curated by our analysts.' },
+  { name: 'AI Summary', endpoint: '/api/v1/intel/ai_summary.json', desc: 'AI-generated summaries of today\'s most critical threats.' },
+  { name: 'Feed', endpoint: '/api/feed.json', desc: 'Structured RSS-style feed for SIEM and SOAR integration.' },
+  { name: 'Latest Reports', endpoint: '/api/reports/latest.json', desc: 'Full threat reports with IOCs, TTPs, and mitigation advice.' },
+];
+
+const tools = [
+  { name: 'Docker Security Auditor', desc: 'Scan containers for CVEs, misconfigurations, and privilege escalations.', href: 'https://tools.cyberdudebivash.com' },
+  { name: 'Threat Intel Dashboard', desc: 'Real-time visualization of global threats hitting your infrastructure.', href: 'https://intel.cyberdudebivash.com' },
+  { name: 'AI Security Hub', desc: 'Central platform for AI-powered cybersecurity operations.', href: 'https://cyberdudebivash.in' },
+];
+---
+<BaseLayout title="Products" description="APIs and tools from CYBERDUDEBIVASH — real-time threat intelligence APIs, Docker security auditor, and more.">
+  <NavBar />
+
+  <section class="pt-32 pb-16 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="text-[#00B4D8] text-sm font-semibold tracking-widest mb-4">PRODUCTS & APIs</p>
+      <h1 class="text-4xl md:text-5xl font-bold">Build with CYBERDUDEBIVASH.</h1>
+      <p class="text-lg text-gray-400 mt-6 max-w-2xl mx-auto">
+        Real-time threat intelligence APIs and security tools for developers, SOC teams, and MSSPs.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-bold mb-8">Threat Intelligence APIs</h2>
+      <div class="space-y-4">
+        {apis.map(api => (
+          <div class="bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A] hover:border-[#00B4D8] transition-colors">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+              <div>
+                <h3 class="font-semibold text-lg text-white">{api.name}</h3>
+                <p class="text-sm text-gray-400 mt-1">{api.desc}</p>
+              </div>
+              <code class="text-xs bg-[#0A1929] px-3 py-2 rounded text-[#00E676] font-mono whitespace-nowrap">{api.endpoint}</code>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="https://intel.cyberdudebivash.com/api-docs" class="inline-block px-8 py-3 bg-[#00B4D8] text-[#0A1929] font-semibold rounded-lg hover:bg-[#00E676] transition-colors">
+          View Full API Docs
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 px-6 bg-[#050F1A]">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-bold mb-8">Security Tools</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {tools.map(t => (
+          <a href={t.href} class="bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A] hover:border-[#00B4D8] transition-colors block">
+            <h3 class="font-semibold text-lg text-white">{t.name}</h3>
+            <p class="text-sm text-gray-400 mt-2">{t.desc}</p>
+            <span class="text-[#00B4D8] text-sm mt-4 inline-block">Open tool →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

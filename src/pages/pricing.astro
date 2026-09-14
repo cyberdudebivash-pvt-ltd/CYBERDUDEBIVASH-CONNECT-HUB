@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+import PricingTable from '../components/PricingTable.astro';
+---
+<BaseLayout title="Pricing" description="Transparent pricing for CYBERDUDEBIVASH APIs and services. Free, Pro, Enterprise, and MSSP tiers.">
+  <NavBar />
+
+  <section class="pt-32 pb-12 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="text-[#00B4D8] text-sm font-semibold tracking-widest mb-4">PRICING</p>
+      <h1 class="text-4xl md:text-5xl font-bold">Simple. Transparent. Scalable.</h1>
+      <p class="text-lg text-gray-400 mt-6 max-w-2xl mx-auto">
+        Start free. Upgrade when you're ready. All plans include access to our core threat intelligence infrastructure.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 px-6">
+    <PricingTable />
+  </section>
+
+  <section class="py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl font-bold">Need a custom plan?</h2>
+      <p class="text-gray-400 mt-4">For large enterprises, government agencies, or custom integrations, we build tailored solutions.</p>
+      <a href="/contact" class="inline-block mt-6 px-8 py-3 border border-[#00B4D8] text-[#00B4D8] font-semibold rounded-lg hover:bg-[#00B4D8]/10 transition-colors">
+        Talk to Sales
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

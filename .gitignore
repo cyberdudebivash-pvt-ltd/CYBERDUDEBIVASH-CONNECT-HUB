@@ -1,0 +1,36 @@
+﻿# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Cloudflare
+.wrangler/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# AI tool files
+CLAUDE.md
+AGENTS.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary scripts
+scaffold*.ps1
+scaffold*.py
+deepseek_powershell_*.ps1growing-group/

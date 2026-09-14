@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+<BaseLayout title="Contact" description="Contact CYBERDUDEBIVASH — sales, support, partnerships, and media inquiries.">
+  <NavBar />
+
+  <section class="pt-32 pb-12 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-[#00B4D8] text-sm font-semibold tracking-widest mb-4">CONTACT US</p>
+      <h1 class="text-4xl md:text-5xl font-bold">Let's Connect.</h1>
+      <p class="text-lg text-gray-400 mt-6">
+        Tell us about your security needs. We respond within 24 hours.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 mb-16">
+      <div class="bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A]">
+        <h3 class="font-semibold text-lg text-white">💼 Sales & Enterprise</h3>
+        <p class="text-sm text-gray-400 mt-2">For pricing, demos, and enterprise solutions</p>
+        <a href="mailto:bivash@cyberdudebivash.com" class="text-[#00B4D8] text-sm mt-3 inline-block break-all">
+          bivash@cyberdudebivash.com
+        </a>
+      </div>
+      <div class="bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A]">
+        <h3 class="font-semibold text-lg text-white">📩 General Inquiries</h3>
+        <p class="text-sm text-gray-400 mt-2">Support, partnerships, and questions</p>
+        <a href="mailto:contact@cyberdudebivash.in" class="text-[#00B4D8] text-sm mt-3 inline-block break-all">
+          contact@cyberdudebivash.in
+        </a>
+      </div>
+      <div class="bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A]">
+        <h3 class="font-semibold text-lg text-white">💬 WhatsApp</h3>
+        <p class="text-sm text-gray-400 mt-2">Fast response during business hours</p>
+        <a href="https://wa.me/918179881447" class="text-[#00B4D8] text-sm mt-3 inline-block">
+          +91 8179881447
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 px-6 bg-[#050F1A]">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold text-center mb-8">Send us a message</h2>
+      <ContactForm />
+    </div>
+  </section>
+
+  <section class="py-12 px-6">
+    <div class="max-w-4xl mx-auto text-center text-sm text-gray-500">
+      <p>📍 CYBERDUDEBIVASH PRIVATE LIMITED, 29, Korai-Sukinda-Ramchandrapur Rd, Ragadi, JAJPUR ROAD, Odisha 755019</p>
+      <p class="mt-2">GSTIN: 21ARKPN8270G1ZP · MSME: UDYAM-OD-19-0133456</p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

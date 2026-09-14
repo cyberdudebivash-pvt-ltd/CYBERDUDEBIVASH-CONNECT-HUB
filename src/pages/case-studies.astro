@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+
+const cases = [
+  {
+    client: 'Regional Fintech (Anonymized)',
+    sector: 'Financial Services',
+    challenge: 'Suspected API misconfigurations exposing customer PII.',
+    solution: 'API Security Audit + Zero Trust redesign for 47 endpoints.',
+    outcome: '3 critical vulnerabilities found and remediated in 72 hours. Zero breaches since.',
+  },
+  {
+    client: 'Healthcare Provider (Anonymized)',
+    sector: 'Healthcare',
+    challenge: 'Ransomware attempt blocked but forensic investigation needed.',
+    solution: 'Incident Response Retainer activation + Threat Hunt for lateral movement.',
+    outcome: 'Attacker foothold identified and removed within 6 hours. Full forensic report delivered.',
+  },
+  {
+    client: 'E-commerce Platform (Anonymized)',
+    sector: 'E-commerce',
+    challenge: 'DDoS attacks disrupting peak-season sales.',
+    solution: 'DDoS Readiness program + WAF hardening.',
+    outcome: 'Zero downtime during peak season. 100% uptime achieved.',
+  },
+];
+
+const testimonials = [
+  { quote: 'CYBERDUDEBIVASH helped us fix a critical vulnerability we didn\'t even know existed.', author: 'Verified Client' },
+  { quote: 'Fast, professional, and thorough. Highly recommended for any growing business.', author: 'Verified Client' },
+  { quote: 'Their threat intelligence platform is now a core part of our security stack.', author: 'Verified Client' },
+];
+---
+<BaseLayout title="Case Studies" description="Real client wins, outcomes, and success stories from CYBERDUDEBIVASH cybersecurity engagements.">
+  <NavBar />
+
+  <section class="pt-32 pb-12 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-[#00B4D8] text-sm font-semibold tracking-widest mb-4">CASE STUDIES</p>
+      <h1 class="text-4xl md:text-5xl font-bold">Real Results.</h1>
+      <p class="text-lg text-gray-400 mt-6">
+        Anonymized case studies from real engagements — because our clients trust us with their names.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 px-6">
+    <div class="max-w-5xl mx-auto space-y-6">
+      {cases.map(c => (
+        <div class="bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A]">
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <span class="text-xs font-bold text-[#0A1929] bg-[#00B4D8] px-3 py-1 rounded-full">{c.sector}</span>
+            <span class="text-sm text-gray-400">{c.client}</span>
+          </div>
+          <div class="grid md:grid-cols-3 gap-4 mt-4">
+            <div>
+              <p class="text-xs text-[#00B4D8] font-semibold uppercase tracking-wide">Challenge</p>
+              <p class="text-sm text-gray-300 mt-2">{c.challenge}</p>
+            </div>
+            <div>
+              <p class="text-xs text-[#00B4D8] font-semibold uppercase tracking-wide">Solution</p>
+              <p class="text-sm text-gray-300 mt-2">{c.solution}</p>
+            </div>
+            <div>
+              <p class="text-xs text-[#00E676] font-semibold uppercase tracking-wide">Outcome</p>
+              <p class="text-sm text-gray-300 mt-2">{c.outcome}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 px-6 bg-[#050F1A]">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-bold mb-8 text-center">What Clients Say</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {testimonials.map(t => (
+          <div class="bg-[#1A2F4A]/50 p-6 rounded-xl border border-[#1A2F4A]">
+            <p class="text-[#FFC107] text-xl">★★★★★</p>
+            <p class="text-sm text-gray-300 mt-3 italic">"{t.quote}"</p>
+            <p class="text-xs text-gray-500 mt-4">— {t.author}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl font-bold">Want results like these?</h2>
+      <a href="/contact" class="inline-block mt-6 px-8 py-3 bg-[#00B4D8] text-[#0A1929] font-semibold rounded-lg hover:bg-[#00E676] transition-colors">
+        Book a Free Consultation
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
