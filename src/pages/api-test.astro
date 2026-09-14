@@ -1,0 +1,68 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="API Test — CYBERDUDEBIVASH">
+  <main class="max-w-3xl mx-auto px-6 py-24">
+    <h1 class="text-4xl font-bold text-white mb-8">API Smoke Test</h1>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">1. Health Check</h2>
+      <button id="health-btn" class="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2 rounded">
+        Test D1 + KV
+      </button>
+      <pre id="health-out" class="mt-4 p-4 bg-slate-900 rounded text-xs text-green-400 overflow-auto"></pre>
+    </div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">2. Submit Test Lead</h2>
+      <button id="lead-btn" class="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2 rounded">
+        POST /api/leads
+      </button>
+      <pre id="lead-out" class="mt-4 p-4 bg-slate-900 rounded text-xs text-green-400 overflow-auto"></pre>
+    </div>
+
+    <div>
+      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">3. Read Leads</h2>
+      <button id="read-btn" class="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2 rounded">
+        GET /api/leads
+      </button>
+      <pre id="read-out" class="mt-4 p-4 bg-slate-900 rounded text-xs text-green-400 overflow-auto"></pre>
+    </div>
+  </main>
+
+  <script>
+    const out = (id: string, data: any) => {
+      document.getElementById(id)!.textContent = JSON.stringify(data, null, 2);
+    };
+
+    document.getElementById('health-btn')!.addEventListener('click', async () => {
+      out('health-out', 'Loading...');
+      const r = await fetch('/api/health');
+      out('health-out', await r.json());
+    });
+
+    document.getElementById('lead-btn')!.addEventListener('click', async () => {
+      out('lead-out', 'Submitting...');
+      const r = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: 'Smoke Test',
+          email: `test-${Date.now()}@cyberdudebivash.com`,
+          company: 'CYBERDUDEBIVASH',
+          service_interest: 'MDR',
+          message: 'Automated smoke test from /api-test',
+          source: 'api-test-page'
+        })
+      });
+      out('lead-out', await r.json());
+    });
+
+    document.getElementById('read-btn')!.addEventListener('click', async () => {
+      out('read-out', 'Loading...');
+      const r = await fetch('/api/leads');
+      out('read-out', await r.json());
+    });
+  </script>
+</BaseLayout>
