@@ -14,15 +14,17 @@ const accentMap = {
 ---
 
 <section class="relative border-y border-[var(--color-border)] bg-[var(--color-abyss)]">
-  <div class="max-w-[1400px] mx-auto px-6 py-12">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+  <div class="max-w-[1400px] mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
       {stats.map((stat, i) => (
         <div class="reveal text-center md:text-left" style={`transition-delay: ${i * 80}ms`}>
-          <div class="font-display text-4xl lg:text-5xl font-bold tracking-tight counter-in"
+          <div class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight counter-in"
                style={`color: ${accentMap[stat.accent as keyof typeof accentMap]}; text-shadow: 0 0 40px ${accentMap[stat.accent as keyof typeof accentMap]}40;`}>
             {stat.value}
           </div>
-          <div class="mt-2 text-xs font-mono text-ink-muted uppercase tracking-wider">{stat.label}</div>
+          <div class="mt-1 sm:mt-2 text-[10px] sm:text-xs font-mono text-ink-muted uppercase tracking-wider leading-tight">
+            {stat.label}
+          </div>
         </div>
       ))}
     </div>

@@ -1,6 +1,16 @@
 User-agent: *
 Allow: /
-Disallow: /api-test
-Disallow: /api/
 
-Sitemap: https://connect.cyberdudebivash.com/sitemap.xml
+# Sitemaps
+Sitemap: https://connect.cyberdudebivash.com/sitemap-index.xml
+
+# Block utility pages
+Disallow: /api-test
+Disallow: /_astro/
+
+# AI training policy (your content, your rules)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /

@@ -1,0 +1,236 @@
+---
+---
+
+<section id="product" class="relative py-20 sm:py-24 lg:py-32 bg-void overflow-hidden">
+  <div class="absolute inset-0 bg-grid opacity-20"></div>
+  <div class="orb orb-cyan w-[400px] h-[400px] top-1/4 -left-40 opacity-15"></div>
+
+  <div class="relative max-w-[1400px] mx-auto px-4 sm:px-6">
+
+    <div class="reveal max-w-3xl mb-12 sm:mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass mb-6 text-xs font-mono text-ink-muted tracking-wider">
+        <span class="text-[var(--color-brand)]">◆</span> THE PLATFORM
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+        See what enterprise security <span class="text-gradient-cyan">actually looks like.</span>
+      </h2>
+      <p class="text-lg text-ink-soft leading-relaxed">
+        A single pane of glass for threat intelligence, SOC operations, and compliance — powered by AI, engineered for scale.
+      </p>
+    </div>
+
+    <div class="reveal product-frame rounded-2xl overflow-hidden">
+
+      <!-- Window chrome -->
+      <div class="flex items-center gap-2 px-4 py-3 border-b border-[var(--color-border)] bg-[var(--color-abyss)]">
+        <div class="flex gap-1.5">
+          <div class="w-3 h-3 rounded-full" style="background: rgba(255,59,92,0.6);"></div>
+          <div class="w-3 h-3 rounded-full" style="background: rgba(255,176,32,0.6);"></div>
+          <div class="w-3 h-3 rounded-full" style="background: rgba(0,214,143,0.6);"></div>
+        </div>
+        <div class="ml-3 px-3 py-1 rounded-md bg-[var(--color-void)] border border-[var(--color-border)] text-[10px] font-mono text-ink-muted">
+          app.cyberdudebivash.com/dashboard
+        </div>
+        <div class="ml-auto flex items-center gap-1.5 text-[10px] font-mono text-[var(--color-success)]">
+          <span class="pulse-live"></span>
+          <span>LIVE</span>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex overflow-x-auto border-b border-[var(--color-border)] bg-[var(--color-abyss)]/50">
+        <button data-tab="threats" class="product-tab active px-4 sm:px-6 py-3 text-xs sm:text-sm font-mono uppercase tracking-wider border-b-2 border-transparent text-ink-muted whitespace-nowrap">
+          Threat Intel
+        </button>
+        <button data-tab="soc" class="product-tab px-4 sm:px-6 py-3 text-xs sm:text-sm font-mono uppercase tracking-wider border-b-2 border-transparent text-ink-muted whitespace-nowrap">
+          SOC Ops
+        </button>
+        <button data-tab="compliance" class="product-tab px-4 sm:px-6 py-3 text-xs sm:text-sm font-mono uppercase tracking-wider border-b-2 border-transparent text-ink-muted whitespace-nowrap">
+          Compliance
+        </button>
+        <button data-tab="ai" class="product-tab px-4 sm:px-6 py-3 text-xs sm:text-sm font-mono uppercase tracking-wider border-b-2 border-transparent text-ink-muted whitespace-nowrap">
+          AI Assistant
+        </button>
+      </div>
+
+      <!-- Panel: Threat Intel -->
+      <div data-panel="threats" class="p-4 sm:p-6 lg:p-8">
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+          <div class="glass rounded-lg p-4">
+            <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">CVEs Today</div>
+            <div class="font-display text-3xl font-bold text-[var(--color-brand)]">260</div>
+            <div class="text-[10px] font-mono text-[var(--color-success)] mt-1">↑ 12% vs yesterday</div>
+          </div>
+          <div class="glass rounded-lg p-4">
+            <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">Critical Threats</div>
+            <div class="font-display text-3xl font-bold text-[var(--color-danger)]">17</div>
+            <div class="text-[10px] font-mono text-[var(--color-danger)] mt-1">↑ 3 new in 6h</div>
+          </div>
+          <div class="glass rounded-lg p-4">
+            <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">Detection Rate</div>
+            <div class="font-display text-3xl font-bold text-[var(--color-success)]">99.4%</div>
+            <div class="text-[10px] font-mono text-[var(--color-success)] mt-1">↑ 0.6% this week</div>
+          </div>
+        </div>
+
+        <div class="glass rounded-lg p-4 mb-4">
+          <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-3">Threat Volume · Last 24h</div>
+          <svg viewBox="0 0 800 100" preserveAspectRatio="none" class="w-full h-24">
+            <polyline class="sparkline" points="0,80 50,70 100,75 150,55 200,65 250,45 300,55 350,35 400,45 450,25 500,35 550,20 600,30 650,15 700,25 750,10 800,20" />
+          </svg>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left border-b border-[var(--color-border)]">
+                <th class="pb-2 text-[10px] font-mono text-ink-muted uppercase tracking-wider">CVE ID</th>
+                <th class="pb-2 text-[10px] font-mono text-ink-muted uppercase tracking-wider">Severity</th>
+                <th class="pb-2 text-[10px] font-mono text-ink-muted uppercase tracking-wider">Score</th>
+                <th class="pb-2 text-[10px] font-mono text-ink-muted uppercase tracking-wider">Status</th>
+              </tr>
+            </thead>
+            <tbody class="font-mono text-xs">
+              <tr class="border-b border-[var(--color-border)]/40">
+                <td class="py-2 text-ink">CVE-2026-38104</td>
+                <td class="py-2 text-[var(--color-danger)]">CRITICAL</td>
+                <td class="py-2 text-ink-soft">9.8</td>
+                <td class="py-2 text-[var(--color-success)]">Patched</td>
+              </tr>
+              <tr class="border-b border-[var(--color-border)]/40">
+                <td class="py-2 text-ink">CVE-2026-38771</td>
+                <td class="py-2 text-[var(--color-warning)]">HIGH</td>
+                <td class="py-2 text-ink-soft">8.2</td>
+                <td class="py-2 text-[var(--color-warning)]">Mitigating</td>
+              </tr>
+              <tr class="border-b border-[var(--color-border)]/40">
+                <td class="py-2 text-ink">CVE-2026-39120</td>
+                <td class="py-2 text-[var(--color-danger)]">CRITICAL</td>
+                <td class="py-2 text-ink-soft">9.6</td>
+                <td class="py-2 text-[var(--color-success)]">Patched</td>
+              </tr>
+              <tr>
+                <td class="py-2 text-ink">CVE-2026-38294</td>
+                <td class="py-2 text-[var(--color-warning)]">MED</td>
+                <td class="py-2 text-ink-soft">6.4</td>
+                <td class="py-2 text-[var(--color-success)]">Patched</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Panel: SOC Ops -->
+      <div data-panel="soc" class="hidden p-4 sm:p-6 lg:p-8">
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="glass rounded-lg p-4">
+            <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">Active Incidents</div>
+            <div class="font-display text-3xl font-bold text-[var(--color-warning)]">3</div>
+          </div>
+          <div class="glass rounded-lg p-4">
+            <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">MTTR</div>
+            <div class="font-display text-3xl font-bold text-[var(--color-success)]">4m 12s</div>
+          </div>
+        </div>
+
+        <div class="glass rounded-lg p-4">
+          <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-3">Live Incident Feed</div>
+          <div class="space-y-2 font-mono text-xs">
+            <div class="flex items-center gap-3 p-2 rounded bg-[var(--color-void)]/50">
+              <span class="text-[var(--color-warning)]">●</span>
+              <span class="text-ink-soft">Acknowledged · Suspicious login attempt · 45.132.x.x</span>
+              <span class="ml-auto text-ink-faint">2m ago</span>
+            </div>
+            <div class="flex items-center gap-3 p-2 rounded bg-[var(--color-void)]/50">
+              <span class="text-[var(--color-success)]">✓</span>
+              <span class="text-ink-soft">Resolved · Malware signature blocked · endpoint-24</span>
+              <span class="ml-auto text-ink-faint">8m ago</span>
+            </div>
+            <div class="flex items-center gap-3 p-2 rounded bg-[var(--color-void)]/50">
+              <span class="text-[var(--color-danger)]">!</span>
+              <span class="text-ink-soft">Escalated · Zero-day attempt · subnet-10.0.4</span>
+              <span class="ml-auto text-ink-faint">12m ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel: Compliance -->
+      <div data-panel="compliance" class="hidden p-4 sm:p-6 lg:p-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="glass rounded-lg p-4 text-center">
+            <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">GSTIN</div>
+            <div class="text-[var(--color-success)] font-display text-2xl mb-1">✓</div>
+            <div class="text-[10px] font-mono text-ink-faint">Verified</div>
+          </div>
+          <div class="glass rounded-lg p-4 text-center">
+            <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">MSME</div>
+            <div class="text-[var(--color-success)] font-display text-2xl mb-1">✓</div>
+            <div class="text-[10px] font-mono text-ink-faint">Verified</div>
+          </div>
+          <div class="glass rounded-lg p-4 text-center">
+            <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">ISO 27001</div>
+            <div class="text-[var(--color-success)] font-display text-2xl mb-1">✓</div>
+            <div class="text-[10px] font-mono text-ink-faint">Compliant</div>
+          </div>
+          <div class="glass rounded-lg p-4 text-center">
+            <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">SOC 2</div>
+            <div class="text-[var(--color-warning)] font-display text-2xl mb-1">○</div>
+            <div class="text-[10px] font-mono text-ink-faint">In Progress</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel: AI Assistant -->
+      <div data-panel="ai" class="hidden p-4 sm:p-6 lg:p-8">
+        <div class="glass rounded-lg p-4 mb-3">
+          <div class="text-[10px] font-mono text-[var(--color-ai)] uppercase tracking-wider mb-2">You</div>
+          <div class="text-sm text-ink-soft">Show me critical CVEs affecting our stack in the last 24 hours.</div>
+        </div>
+        <div class="glass rounded-lg p-4 border-[var(--color-ai)]/40">
+          <div class="text-[10px] font-mono text-[var(--color-ai)] uppercase tracking-wider mb-2">◆ Sentinel AI</div>
+          <div class="text-sm text-ink-soft leading-relaxed">
+            I found <span class="text-[var(--color-danger)] font-semibold">3 critical CVEs</span> affecting your stack:
+            <ul class="mt-2 space-y-1 text-xs">
+              <li>• <span class="font-mono text-ink">CVE-2026-38104</span> — affects your Node.js runtime (score 9.8)</li>
+              <li>• <span class="font-mono text-ink">CVE-2026-39120</span> — affects your WAF (score 9.6)</li>
+              <li>• <span class="font-mono text-ink">CVE-2026-38471</span> — affects your database (score 9.1)</li>
+            </ul>
+            <div class="mt-3 text-xs text-[var(--color-brand)]">Recommended action: patch within 4 hours. Shall I generate the patch plan?</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-8 reveal">
+      <a href="#book" class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-brand)] hover:text-ink transition-colors">
+        <span>Experience the full platform</span>
+        <span>→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  (function productTabs() {
+    const tabs = document.querySelectorAll('.product-tab');
+    const panels = document.querySelectorAll('[data-panel]');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        panels.forEach(p => {
+          if (p.getAttribute('data-panel') === target) {
+            p.classList.remove('hidden');
+          } else {
+            p.classList.add('hidden');
+          }
+        });
+      });
+    });
+  })();
+</script>

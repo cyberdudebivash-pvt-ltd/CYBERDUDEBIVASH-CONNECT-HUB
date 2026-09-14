@@ -1,98 +1,240 @@
 ---
 ---
 
-<section class="relative overflow-hidden bg-void">
-  <div class="orb orb-cyan w-[600px] h-[600px] -top-40 -left-40"></div>
-  <div class="orb orb-purple w-[500px] h-[500px] top-20 -right-40"></div>
-  <div class="absolute inset-0 bg-grid opacity-40"></div>
-  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-void)]"></div>
+<section class="relative overflow-hidden bg-void min-h-[85vh] lg:min-h-[90vh] flex items-center">
 
-  <div class="relative max-w-[1400px] mx-auto px-6 pt-24 pb-32 lg:pt-32 lg:pb-40">
-    <div class="grid lg:grid-cols-12 gap-12 items-center">
+  <!-- Layer 1: Animated mesh gradient -->
+  <div class="absolute inset-0 bg-mesh opacity-60"></div>
+
+  <!-- Layer 2: Grid overlay -->
+  <div class="absolute inset-0 bg-grid opacity-40"></div>
+
+  <!-- Layer 3: Ambient orbs -->
+  <div class="orb orb-cyan w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] -top-40 -left-40 opacity-30 sm:opacity-40"></div>
+  <div class="orb orb-purple w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] top-1/3 -right-32 opacity-25 sm:opacity-35"></div>
+
+  <!-- Layer 4: Floating particles -->
+  <div class="particles hidden md:block" id="particles"></div>
+
+  <!-- Layer 5: Bottom fade -->
+  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[var(--color-void)]"></div>
+
+  <!-- Content -->
+  <div class="relative max-w-[1400px] mx-auto px-4 sm:px-6 py-16 sm:py-20 lg:py-24 w-full">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+      <!-- Left column -->
       <div class="lg:col-span-7">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border-[var(--color-border-hi)] mb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border-[var(--color-border-hi)] mb-5 sm:mb-6 reveal">
           <span class="pulse-live"></span>
-          <span class="text-xs font-mono text-ink-soft tracking-wider">LIVE · GLOBAL THREAT INTELLIGENCE</span>
+          <span class="text-[10px] sm:text-xs font-mono text-ink-soft tracking-wider">LIVE · GLOBAL THREAT INTELLIGENCE</span>
         </div>
 
-        <h1 class="font-display text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6">
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-5 sm:mb-6 reveal">
           <span class="text-ink">Connect.</span>{' '}
           <span class="text-gradient-cyan">Protect.</span>{' '}
-          <span class="text-ink">Grow.</span>
+          <span class="text-ink" id="typewriter-target">Grow.</span>
         </h1>
 
-        <p class="text-lg lg:text-xl text-ink-soft max-w-2xl leading-relaxed mb-8">
+        <p class="text-base sm:text-lg lg:text-xl text-ink-soft max-w-2xl leading-relaxed mb-6 sm:mb-8 reveal">
           India's <span class="text-ink font-semibold">#1 AI-Native Cybersecurity Platform</span> — delivering
           <span class="text-[var(--color-brand)]">real-time threat intelligence</span>,
           <span class="text-[var(--color-brand)]">SOC operations</span>, and
           <span class="text-[var(--color-brand)]">enterprise cyber defense</span> worldwide.
         </p>
 
-        <div class="flex flex-wrap items-center gap-4 mb-10">
-          <a href="#book" class="group px-6 py-3.5 rounded-md bg-[var(--color-brand)] text-[var(--color-void)] font-semibold text-sm hover:bg-[var(--color-brand-dim)] transition-all duration-200 shadow-[0_0_30px_-8px_var(--color-brand-glow)] flex items-center gap-2">
+        <div class="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-10 reveal">
+          <a href="#book" class="group px-6 py-3.5 rounded-md bg-[var(--color-brand)] text-[var(--color-void)] font-semibold text-sm hover:bg-[var(--color-brand-dim)] transition-all duration-200 shadow-[0_0_30px_-8px_var(--color-brand-glow)] inline-flex items-center justify-center gap-2">
             <span>Book Free Security Scan</span>
             <span class="transition-transform group-hover:translate-x-0.5">→</span>
           </a>
-          <a href="#ecosystem" class="px-6 py-3.5 rounded-md border border-[var(--color-border-hi)] text-ink font-semibold text-sm hover:border-[var(--color-brand)] hover:bg-[var(--color-surface)] transition-all duration-200">
-            Explore Platform
+          <a href="#product" class="px-6 py-3.5 rounded-md border border-[var(--color-border-hi)] text-ink font-semibold text-sm hover:border-[var(--color-brand)] hover:bg-[var(--color-surface)] transition-all duration-200 text-center">
+            See the Platform
           </a>
         </div>
 
-        <div class="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink-muted">
+        <div class="flex flex-wrap items-center gap-x-6 sm:gap-x-8 gap-y-3 text-xs sm:text-sm text-ink-muted reveal">
           <div class="flex items-center gap-2"><span class="text-[var(--color-warning)]">★</span><span class="text-ink font-semibold">5.0</span><span>Google Rating</span></div>
           <div class="flex items-center gap-2"><span class="text-[var(--color-brand)]">◆</span><span class="text-ink font-semibold">265+</span><span>Business Interactions</span></div>
           <div class="flex items-center gap-2"><span class="text-[var(--color-success)]">●</span><span>Serving Globally</span></div>
         </div>
       </div>
 
-      <div class="lg:col-span-5">
-        <div class="glass rounded-2xl p-6 border-[var(--color-border-hi)] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.8)]">
-          <div class="flex items-center justify-between mb-6 pb-4 border-b border-[var(--color-border)]">
-            <div class="flex items-center gap-2"><span class="pulse-live"></span><span class="text-xs font-mono text-ink-soft tracking-wider uppercase">Sentinel APEX Feed</span></div>
-            <span class="text-[10px] font-mono text-ink-faint">v1.0</span>
+      <!-- Right column — Live intel panel -->
+      <div class="lg:col-span-5 reveal" style="transition-delay: 200ms">
+        <div class="glass rounded-2xl p-4 sm:p-6 border-[var(--color-border-hi)] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.8)]">
+
+          <!-- Panel header -->
+          <div class="flex items-center justify-between mb-4 sm:mb-6 pb-4 border-b border-[var(--color-border)]">
+            <div class="flex items-center gap-2">
+              <span class="pulse-live"></span>
+              <span class="text-[10px] sm:text-xs font-mono text-ink-soft tracking-wider uppercase">Sentinel APEX · Live</span>
+            </div>
+            <span class="text-[10px] font-mono text-ink-faint" id="last-updated">syncing...</span>
           </div>
 
-          <div class="space-y-4 mb-6">
+          <!-- Live stats -->
+          <div class="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
             <div class="flex items-baseline justify-between">
-              <span class="text-xs font-mono text-ink-muted uppercase tracking-wider">CVEs Tracked Today</span>
-              <span class="font-display text-3xl font-bold text-[var(--color-brand)]">260</span>
+              <span class="text-[10px] sm:text-xs font-mono text-ink-muted uppercase tracking-wider">CVEs Tracked Today</span>
+              <span class="font-display text-2xl sm:text-3xl font-bold text-[var(--color-brand)]" id="cve-count">260</span>
             </div>
             <div class="flex items-baseline justify-between">
-              <span class="text-xs font-mono text-ink-muted uppercase tracking-wider">Critical Threats</span>
-              <span class="font-display text-3xl font-bold text-[var(--color-danger)]">17</span>
+              <span class="text-[10px] sm:text-xs font-mono text-ink-muted uppercase tracking-wider">Critical Threats</span>
+              <span class="font-display text-2xl sm:text-3xl font-bold text-[var(--color-danger)]" id="critical-count">17</span>
             </div>
             <div class="flex items-baseline justify-between">
-              <span class="text-xs font-mono text-ink-muted uppercase tracking-wider">SOC Uptime</span>
-              <span class="font-display text-3xl font-bold text-[var(--color-success)]">99.99%</span>
+              <span class="text-[10px] sm:text-xs font-mono text-ink-muted uppercase tracking-wider">SOC Uptime</span>
+              <span class="font-display text-2xl sm:text-3xl font-bold text-[var(--color-success)]">99.99%</span>
             </div>
           </div>
 
+          <!-- Sparkline -->
+          <div class="rounded-lg bg-[var(--color-void)] border border-[var(--color-border)] p-3 overflow-hidden mb-3">
+            <div class="text-[10px] font-mono text-ink-faint uppercase tracking-wider mb-2">// 24h Threat Volume</div>
+            <svg viewBox="0 0 300 40" preserveAspectRatio="none" class="w-full h-10">
+              <polyline class="sparkline" points="0,30 20,25 40,28 60,18 80,22 100,15 120,20 140,12 160,18 180,10 200,14 220,8 240,15 260,10 280,12 300,6" />
+            </svg>
+          </div>
+
+          <!-- CVE ticker -->
           <div class="rounded-lg bg-[var(--color-void)] border border-[var(--color-border)] p-3 overflow-hidden">
             <div class="text-[10px] font-mono text-ink-faint uppercase tracking-wider mb-2">// Latest CVEs</div>
             <div class="marquee">
-              <div class="marquee-track text-xs font-mono">
-                <span class="text-ink-soft">CVE-2026-38104 <span class="text-[var(--color-danger)]">· CRITICAL · 9.8</span></span>
-                <span class="text-ink-soft">CVE-2026-38771 <span class="text-[var(--color-warning)]">· HIGH · 8.2</span></span>
-                <span class="text-ink-soft">CVE-2026-39120 <span class="text-[var(--color-danger)]">· CRITICAL · 9.6</span></span>
-                <span class="text-ink-soft">CVE-2026-38294 <span class="text-[var(--color-warning)]">· MED · 6.4</span></span>
-                <span class="text-ink-soft">CVE-2026-39011 <span class="text-[var(--color-warning)]">· HIGH · 7.9</span></span>
+              <div class="marquee-track text-xs font-mono" id="cve-ticker-track-1">
+                <span class="text-ink-soft whitespace-nowrap">CVE-2026-38104 <span class="text-[var(--color-danger)]">· CRITICAL · 9.8</span></span>
+                <span class="text-ink-soft whitespace-nowrap">CVE-2026-38771 <span class="text-[var(--color-warning)]">· HIGH · 8.2</span></span>
+                <span class="text-ink-soft whitespace-nowrap">CVE-2026-39120 <span class="text-[var(--color-danger)]">· CRITICAL · 9.6</span></span>
+                <span class="text-ink-soft whitespace-nowrap">CVE-2026-38294 <span class="text-[var(--color-warning)]">· MED · 6.4</span></span>
+                <span class="text-ink-soft whitespace-nowrap">CVE-2026-39011 <span class="text-[var(--color-warning)]">· HIGH · 7.9</span></span>
               </div>
-              <div class="marquee-track text-xs font-mono" aria-hidden="true">
-                <span class="text-ink-soft">CVE-2026-38104 <span class="text-[var(--color-danger)]">· CRITICAL · 9.8</span></span>
-                <span class="text-ink-soft">CVE-2026-38771 <span class="text-[var(--color-warning)]">· HIGH · 8.2</span></span>
-                <span class="text-ink-soft">CVE-2026-39120 <span class="text-[var(--color-danger)]">· CRITICAL · 9.6</span></span>
-                <span class="text-ink-soft">CVE-2026-38294 <span class="text-[var(--color-warning)]">· MED · 6.4</span></span>
-                <span class="text-ink-soft">CVE-2026-39011 <span class="text-[var(--color-warning)]">· HIGH · 7.9</span></span>
+              <div class="marquee-track text-xs font-mono" aria-hidden="true" id="cve-ticker-track-2">
+                <span class="text-ink-soft whitespace-nowrap">CVE-2026-38104 <span class="text-[var(--color-danger)]">· CRITICAL · 9.8</span></span>
+                <span class="text-ink-soft whitespace-nowrap">CVE-2026-38771 <span class="text-[var(--color-warning)]">· HIGH · 8.2</span></span>
+                <span class="text-ink-soft whitespace-nowrap">CVE-2026-39120 <span class="text-[var(--color-danger)]">· CRITICAL · 9.6</span></span>
+                <span class="text-ink-soft whitespace-nowrap">CVE-2026-38294 <span class="text-[var(--color-warning)]">· MED · 6.4</span></span>
+                <span class="text-ink-soft whitespace-nowrap">CVE-2026-39011 <span class="text-[var(--color-warning)]">· HIGH · 7.9</span></span>
               </div>
             </div>
           </div>
 
-          <div class="mt-4 flex items-center justify-between text-[10px] font-mono text-ink-faint">
+          <div class="mt-3 sm:mt-4 flex items-center justify-between text-[10px] font-mono text-ink-faint">
             <span>SOURCE: SENTINEL APEX</span>
-            <span>LATENCY: 42ms</span>
+            <span id="latency">latency: —</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  // ══════════ Particle Generator ══════════
+  (function generateParticles() {
+    const container = document.getElementById('particles');
+    if (!container) return;
+    const count = 15;
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.animationDelay = (Math.random() * 8) + 's';
+      p.style.animationDuration = (6 + Math.random() * 4) + 's';
+      p.style.opacity = '0';
+      container.appendChild(p);
+    }
+  })();
+
+  // ══════════ Typewriter Effect ══════════
+  (function typewriter() {
+    const target = document.getElementById('typewriter-target');
+    if (!target) return;
+    const words = ['Grow.', 'Scale.', 'Lead.'];
+    let wordIdx = 0;
+    let charIdx = words[0].length;
+    let deleting = false;
+
+    function tick() {
+      const current = words[wordIdx];
+      if (!deleting) {
+        charIdx++;
+        if (charIdx > current.length) {
+          deleting = true;
+          setTimeout(tick, 2500);
+          return;
+        }
+      } else {
+        charIdx--;
+        if (charIdx === 0) {
+          deleting = false;
+          wordIdx = (wordIdx + 1) % words.length;
+        }
+      }
+      target.textContent = current.substring(0, charIdx);
+      setTimeout(tick, deleting ? 60 : 120);
+    }
+    // Start with "Grow." fully shown, wait 3s, then delete
+    setTimeout(() => { deleting = true; tick(); }, 3000);
+  })();
+
+  // ══════════ Live Intel Fetcher ══════════
+  (function liveIntel() {
+    const INTEL_API = 'https://intel.cyberdudebivash.com/api/v1/intel/latest.json';
+    const cveCount = document.getElementById('cve-count');
+    const criticalCount = document.getElementById('critical-count');
+    const lastUpdated = document.getElementById('last-updated');
+    const latency = document.getElementById('latency');
+    const track1 = document.getElementById('cve-ticker-track-1');
+    const track2 = document.getElementById('cve-ticker-track-2');
+
+    function severityClass(score) {
+      if (score >= 9.0) return 'text-[var(--color-danger)]';
+      if (score >= 7.0) return 'text-[var(--color-warning)]';
+      return 'text-[var(--color-success)]';
+    }
+
+    function severityLabel(score) {
+      if (score >= 9.0) return 'CRITICAL';
+      if (score >= 7.0) return 'HIGH';
+      if (score >= 4.0) return 'MED';
+      return 'LOW';
+    }
+
+    function renderCVEs(cves) {
+      if (!cves || !cves.length) return;
+      const html = cves.slice(0, 8).map(cve => {
+        const id = cve.id || cve.cve_id || 'CVE-UNKNOWN';
+        const score = parseFloat(cve.score || cve.cvss_score || 0).toFixed(1);
+        const cls = severityClass(parseFloat(score));
+        return `<span class="text-ink-soft whitespace-nowrap">${id} <span class="${cls}">· ${severityLabel(parseFloat(score))} · ${score}</span></span>`;
+      }).join('');
+      if (track1) track1.innerHTML = html;
+      if (track2) track2.innerHTML = html;
+    }
+
+    async function fetchIntel() {
+      const start = performance.now();
+      try {
+        const res = await fetch(INTEL_API, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const elapsed = Math.round(performance.now() - start);
+
+        if (cveCount && data.total_cves) cveCount.textContent = data.total_cves;
+        if (criticalCount && data.critical_count) criticalCount.textContent = data.critical_count;
+        if (data.latest_cves || data.cves) renderCVEs(data.latest_cves || data.cves);
+
+        if (lastUpdated) lastUpdated.textContent = 'live';
+        if (latency) latency.textContent = 'latency: ' + elapsed + 'ms';
+      } catch (err) {
+        // Graceful fallback — keep the mock data already rendered
+        if (lastUpdated) lastUpdated.textContent = 'cached';
+        if (latency) latency.textContent = 'latency: --';
+        console.debug('[hero] intel fetch failed, using cached data:', err.message);
+      }
+    }
+
+    fetchIntel();
+    setInterval(fetchIntel, 60000);
+  })();
+</script>
