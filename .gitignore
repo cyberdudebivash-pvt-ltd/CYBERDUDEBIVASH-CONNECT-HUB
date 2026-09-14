@@ -34,3 +34,5 @@ npm-debug.log*
 scaffold*.ps1
 scaffold*.py
 deepseek_powershell_*.ps1growing-group/
+
+wrangler.toml.bak-*

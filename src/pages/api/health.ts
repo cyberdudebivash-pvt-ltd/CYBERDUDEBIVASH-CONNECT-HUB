@@ -6,7 +6,6 @@ export const GET: APIRoute = async ({ locals }) => {
   const env = locals.runtime.env;
   const status: any = { ok: true, timestamp: new Date().toISOString() };
 
-  // Test D1
   try {
     const row = await env.DB.prepare('SELECT COUNT(*) as c FROM leads').first();
     status.d1 = { connected: true, leadCount: row?.c ?? 0 };
@@ -15,7 +14,6 @@ export const GET: APIRoute = async ({ locals }) => {
     status.ok = false;
   }
 
-  // Test KV
   try {
     const probe = `health-${Date.now()}`;
     await env.SESSION.put('__health__', probe, { expirationTtl: 60 });
