@@ -1,0 +1,36 @@
+# CYBERDUDEBIVASH Production Security Headers
+# Applied by Cloudflare Pages/Workers on every response
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  X-DNS-Prefetch-Control: off
+  X-Permitted-Cross-Domain-Policies: none
+
+# API routes — no indexing, no caching
+/api/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store, no-cache, must-revalidate
+
+# Assets — long cache
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: https://connect.cyberdudebivash.com
+
+# Favicon
+/favicon.svg
+  Cache-Control: public, max-age=604800
+
+# Root HTML — no cache so updates roll out instantly
+/
+  Cache-Control: public, max-age=0, must-revalidate
