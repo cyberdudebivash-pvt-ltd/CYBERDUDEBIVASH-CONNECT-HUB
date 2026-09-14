@@ -1,10 +1,13 @@
 ---
 const nav = [
-  { label: 'Platforms', href: '#ecosystem' },
-  { label: 'Services',  href: '#services'  },
-  { label: 'Intel',     href: 'https://intel.cyberdudebivash.com', external: true },
-  { label: 'Tools',     href: 'https://tools.cyberdudebivash.com', external: true },
-  { label: 'Blog',      href: 'https://blog.cyberdudebivash.in',   external: true },
+  { label: 'Platforms',       href: '#ecosystem' },
+  { label: 'Services',        href: '#services' },
+  { label: 'AI Security Hub', href: 'https://cyberdudebivash.in', external: true },
+  { label: 'Sentinel APEX',   href: 'https://intel.cyberdudebivash.com', external: true },
+  { label: 'Academy',         href: 'https://academy.cyberdudebivash.com', external: true },
+  { label: 'Labs',            href: 'https://labs.cyberdudebivash.in', external: true },
+  { label: 'Tools',           href: 'https://tools.cyberdudebivash.com', external: true },
+  { label: 'Blog',            href: 'https://blog.cyberdudebivash.in', external: true },
 ];
 ---
 
@@ -30,7 +33,7 @@ const nav = [
         <a href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noopener' : undefined}
            class="px-3 py-2 text-sm text-ink-soft hover:text-ink transition-colors rounded-md hover:bg-[var(--color-surface)]">
           {item.label}
-          {item.external && <span class="ml-1 text-ink-faint">↗</span>}
+          {item.external && <span class="ml-1 text-ink-faint">></span>}
         </a>
       ))}
     </div>
@@ -78,7 +81,7 @@ const nav = [
           class="flex items-center justify-between px-4 py-3 rounded-md text-base text-ink-soft hover:text-ink hover:bg-[var(--color-surface)] transition-colors"
         >
           <span>{item.label}</span>
-          {item.external && <span class="text-ink-faint">↗</span>}
+          {item.external && <span class="text-ink-faint">></span>}
         </a>
       ))}
       <a
