@@ -1,23 +1,46 @@
 ---
 const nav = [
-  { name: 'Services', href: '/services' },
-  { name: 'Products', href: '/products' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'Press', href: '/press' },
-  { name: 'Contact', href: '/contact' },
+  { label: 'Platforms', href: '#ecosystem' },
+  { label: 'Services',  href: '#services'  },
+  { label: 'Intel',     href: 'https://intel.cyberdudebivash.com', external: true },
+  { label: 'Tools',     href: 'https://tools.cyberdudebivash.com', external: true },
+  { label: 'Blog',      href: 'https://blog.cyberdudebivash.in',   external: true },
 ];
 ---
-<nav class="fixed top-0 w-full bg-[#0A1929]/95 backdrop-blur-md border-b border-[#1A2F4A] z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2">
-      <span class="text-xl font-bold text-[#00B4D8]">CYBERDUDEBIVASH</span>
-      <span class="text-xs text-gray-500 hidden md:inline">Connect Hub</span>
+
+<header class="sticky top-0 z-50 border-b border-[var(--color-border)] backdrop-blur-xl bg-[rgba(5,11,20,0.75)]">
+  <nav class="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="relative">
+        <div class="w-8 h-8 rounded-md bg-gradient-to-br from-[var(--color-brand)] to-[var(--color-ai)] grid place-items-center">
+          <span class="font-mono text-[10px] font-bold text-[var(--color-void)]">CDB</span>
+        </div>
+        <div class="absolute inset-0 rounded-md bg-[var(--color-brand)] opacity-0 group-hover:opacity-40 blur-lg transition-opacity duration-300"></div>
+      </div>
+      <div class="flex flex-col leading-none">
+        <span class="text-sm font-bold tracking-tight text-ink">CYBERDUDEBIVASH</span>
+        <span class="text-[10px] font-mono text-ink-muted tracking-wider uppercase">Connect Hub</span>
+      </div>
     </a>
-    <div class="hidden md:flex items-center gap-8">
-      {nav.map(item => (
-        <a href={item.href} class="text-sm text-gray-300 hover:text-[#00B4D8]">{item.name}</a>
+
+    <div class="hidden lg:flex items-center gap-1">
+      {nav.map((item) => (
+        <a href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noopener' : undefined}
+           class="px-3 py-2 text-sm text-ink-soft hover:text-ink transition-colors rounded-md hover:bg-[var(--color-surface)]">
+          {item.label}
+          {item.external && <span class="ml-1 text-ink-faint">↗</span>}
+        </a>
       ))}
-      <a href="/contact" class="px-4 py-2 bg-[#00B4D8] text-[#0A1929] font-semibold rounded-lg text-sm">Book a Call</a>
     </div>
-  </div>
-</nav>
+
+    <div class="flex items-center gap-3">
+      <div class="hidden md:flex items-center gap-2 text-xs font-mono text-ink-muted">
+        <span class="pulse-live"></span>
+        <span>ALL SYSTEMS OPERATIONAL</span>
+      </div>
+      <a href="#book" class="px-4 py-2 text-sm font-semibold rounded-md bg-[var(--color-brand)] text-[var(--color-void)] hover:bg-[var(--color-brand-dim)] transition-all duration-200 shadow-[0_0_20px_-4px_var(--color-brand-glow)]">
+        Book a Call
+      </a>
+    </div>
+  </nav>
+</header>

@@ -3,14 +3,26 @@ compatibility_date = "2026-09-01"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = "dist"
 
+# Static assets — use STATIC_ASSETS, not ASSETS (reserved in Wrangler 4.107+)
+[assets]
+binding = "STATIC_ASSETS"
+directory = "./dist"
+
+# D1 database
 [[d1_databases]]
 binding = "DB"
 database_name = "cyberdudebivash-connect-db"
 database_id = "fa3a6238-403f-4843-bf4c-490cd4653f8a"
 
+# KV namespace
 [[kv_namespaces]]
 binding = "SESSION"
 id = "3f326bfb7c194efb898e7b5326baa586"
+
+# Custom domain route
+[[routes]]
+pattern = "connect.cyberdudebivash.com"
+custom_domain = true
 
 [vars]
 PUBLIC_BRAND_NAME = "CYBERDUDEBIVASH Connect Hub"

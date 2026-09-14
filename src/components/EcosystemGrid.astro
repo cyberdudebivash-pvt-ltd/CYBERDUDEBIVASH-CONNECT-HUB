@@ -1,0 +1,58 @@
+---
+const platforms = [
+  { name: 'AI Security Hub',   url: 'https://cyberdudebivash.in',              tagline: 'Enterprise AI Security Platform', description: 'Production-grade AI security, deployment hardening, and continuous monitoring.', icon: '🌐', badge: 'FLAGSHIP', accent: 'var(--color-brand)' },
+  { name: 'Sentinel APEX',     url: 'https://intel.cyberdudebivash.com',       tagline: 'Enterprise Threat Intelligence',  description: 'Real-time CVE tracking, APEX intel feeds, AI summaries, and API-first delivery.',  icon: '🛰', badge: 'LIVE',     accent: 'var(--color-danger)' },
+  { name: 'Threat Intel APIs', url: 'https://cyberdudebivash.in/api/',         tagline: 'Developer-First Intel APIs',      description: 'REST + JSON endpoints for security teams. Feed, reports, APEX, and AI summaries.', icon: '⚡', badge: 'DOCS',     accent: 'var(--color-warning)' },
+  { name: 'Tools Store',       url: 'https://tools.cyberdudebivash.com',       tagline: 'Official Cybersecurity Tools',    description: 'Curated, production-ready security tooling built and maintained by our team.',     icon: '🛠', badge: 'STORE',    accent: 'var(--color-success)' },
+  { name: 'Threat Intel Blog', url: 'https://blog.cyberdudebivash.in',         tagline: 'Research & Advisories',           description: 'Deep-dive research, CVE analyses, and strategic threat intelligence writing.',     icon: '📰', badge: 'BLOG',     accent: 'var(--color-ai)' },
+  { name: 'Corporate Portal',  url: 'https://cyberdudebivash.com',             tagline: 'Official Company Site',           description: 'Company information, leadership, press, and enterprise engagement.',               icon: '🏛', badge: 'CORP',     accent: 'var(--color-brand)' },
+  { name: 'Cyber Academy',     url: 'https://academy.cyberdudebivash.com',     tagline: 'Professional Training',           description: 'Certification-grade cybersecurity and AI security training programs.',             icon: '🎓', badge: 'ACADEMY',  accent: 'var(--color-warning)' },
+  { name: 'CTI Platform',      url: 'https://cti.cyberdudebivash.in',          tagline: 'Cyber Threat Intelligence',       description: 'Structured CTI feeds, adversary tracking, and IOC enrichment.',                   icon: '🔍', badge: 'CTI',      accent: 'var(--color-danger)' },
+  { name: 'Labs',              url: 'https://labs.cyberdudebivash.in',         tagline: 'R&D & Innovation',                description: 'Experimental security research and proof-of-concept tooling.',                    icon: '🧪', badge: 'LABS',     accent: 'var(--color-ai)' },
+  { name: 'TrustX',            url: 'https://trustx.cyberdudebivash.com',      tagline: 'Trust & Compliance',              description: 'Compliance posture, certifications, and enterprise trust center.',                icon: '🛡', badge: 'TRUST',    accent: 'var(--color-success)' },
+];
+---
+
+<section id="ecosystem" class="relative py-24 lg:py-32 bg-void">
+  <div class="max-w-[1400px] mx-auto px-6">
+    <div class="reveal max-w-3xl mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass mb-6 text-xs font-mono text-ink-muted tracking-wider">
+        <span class="text-[var(--color-brand)]">◆</span> THE CYBERDUDEBIVASH ECOSYSTEM
+      </div>
+      <h2 class="font-display text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+        One company. <span class="text-gradient-cyan">Ten platforms.</span>
+      </h2>
+      <p class="text-lg text-ink-soft leading-relaxed">
+        Every tool, feed, and API you need for end-to-end cyber defense — engineered, maintained, and shipped from India for the world.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {platforms.map((p, i) => (
+        <a href={p.url} target="_blank" rel="noopener"
+           class="reveal group glass glass-hover rounded-xl p-6 flex flex-col"
+           style={`transition-delay: ${Math.min(i * 50, 400)}ms`}>
+          <div class="flex items-start justify-between mb-5">
+            <div class="w-12 h-12 rounded-lg grid place-items-center text-2xl border"
+                 style={`border-color: ${p.accent}40; background: ${p.accent}10;`}>
+              {p.icon}
+            </div>
+            <span class="text-[10px] font-mono tracking-wider px-2 py-1 rounded border"
+                  style={`color: ${p.accent}; border-color: ${p.accent}40; background: ${p.accent}10;`}>
+              {p.badge}
+            </span>
+          </div>
+
+          <h3 class="font-display text-xl font-bold text-ink mb-1 group-hover:text-[var(--color-brand)] transition-colors">{p.name}</h3>
+          <div class="text-xs font-mono text-ink-muted uppercase tracking-wider mb-3">{p.tagline}</div>
+          <p class="text-sm text-ink-soft leading-relaxed flex-1 mb-5">{p.description}</p>
+
+          <div class="flex items-center gap-2 text-xs font-mono text-ink-muted group-hover:text-[var(--color-brand)] transition-colors">
+            <span class="truncate">{p.url.replace('https://', '')}</span>
+            <span class="ml-auto transition-transform group-hover:translate-x-0.5">↗</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

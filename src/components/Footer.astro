@@ -1,42 +1,118 @@
 ---
 const year = new Date().getFullYear();
+
+const platformLinks = [
+  { label: 'AI Security Hub',   url: 'https://cyberdudebivash.in' },
+  { label: 'Sentinel APEX',     url: 'https://intel.cyberdudebivash.com' },
+  { label: 'Threat Intel APIs', url: 'https://cyberdudebivash.in/api/' },
+  { label: 'Tools Store',       url: 'https://tools.cyberdudebivash.com' },
+  { label: 'Threat Intel Blog', url: 'https://blog.cyberdudebivash.in' },
+  { label: 'Cyber Academy',     url: 'https://academy.cyberdudebivash.com' },
+  { label: 'CTI Platform',      url: 'https://cti.cyberdudebivash.in' },
+  { label: 'Labs',              url: 'https://labs.cyberdudebivash.in' },
+  { label: 'TrustX',            url: 'https://trustx.cyberdudebivash.com' },
+  { label: 'Corporate',         url: 'https://cyberdudebivash.com' },
+];
+
+const companyLinks = [
+  { label: 'Services',       href: '/services' },
+  { label: 'Products',       href: '/products' },
+  { label: 'Pricing',        href: '/pricing' },
+  { label: 'Press',          href: '/press' },
+  { label: 'Case Studies',   href: '/case-studies' },
+  { label: 'Contact',        href: '/contact' },
+];
+
+const connectLinks = [
+  { label: 'contact@cyberdudebivash.in', href: 'mailto:contact@cyberdudebivash.in' },
+  { label: 'bivash@cyberdudebivash.com', href: 'mailto:bivash@cyberdudebivash.com' },
+  { label: '+91 8179881447',             href: 'tel:+918179881447' },
+  { label: 'WhatsApp',                   href: 'https://wa.me/918179881447' },
+  { label: 'LinkedIn',                   href: 'https://www.linkedin.com/company/cyberdudebivash/' },
+  { label: 'X (Twitter)',                href: 'https://x.com/cyberbivash' },
+];
 ---
-<footer class="bg-[#050F1A] text-white py-12 mt-24 border-t border-[#1A2F4A]">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
-    <div>
-      <h3 class="text-xl font-bold text-[#00B4D8]">CYBERDUDEBIVASH</h3>
-      <p class="text-sm text-gray-400 mt-2">India's 1st AI-Native Cybersecurity Platform</p>
-      <p class="text-xs text-gray-600 mt-4">Connect. Protect. Grow.</p>
+
+<footer class="relative bg-[var(--color-abyss)] border-t border-[var(--color-border)]">
+  <div class="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
+
+  <div class="relative max-w-[1400px] mx-auto px-6 py-16 lg:py-20">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-14">
+
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-8 rounded-md bg-gradient-to-br from-[var(--color-brand)] to-[var(--color-ai)] grid place-items-center">
+            <span class="font-mono text-[10px] font-bold text-[var(--color-void)]">CDB</span>
+          </div>
+          <div class="flex flex-col leading-none">
+            <span class="text-sm font-bold tracking-tight text-ink">CYBERDUDEBIVASH</span>
+            <span class="text-[10px] font-mono text-ink-muted tracking-wider uppercase">Connect Hub</span>
+          </div>
+        </div>
+        <p class="text-sm text-ink-soft leading-relaxed mb-5">
+          India's 1st AI-Native Cybersecurity Platform. Delivering threat intelligence, SOC operations, and enterprise cyber defense worldwide.
+        </p>
+        <div class="flex items-center gap-2 text-xs font-mono">
+          <span class="pulse-live"></span>
+          <span class="text-[var(--color-success)]">ALL SYSTEMS OPERATIONAL</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-4">Platforms</div>
+        <ul class="space-y-2.5">
+          {platformLinks.map((item) => (
+            <li>
+              <a href={item.url} target="_blank" rel="noopener" class="text-sm text-ink-soft hover:text-[var(--color-brand)] transition-colors inline-flex items-center gap-1 group">
+                {item.label}
+                <span class="text-[10px] text-ink-faint group-hover:text-[var(--color-brand)] transition-colors">↗</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-4">Company</div>
+        <ul class="space-y-2.5">
+          {companyLinks.map((item) => (
+            <li><a href={item.href} class="text-sm text-ink-soft hover:text-[var(--color-brand)] transition-colors">{item.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-4">Connect</div>
+        <ul class="space-y-2.5">
+          {connectLinks.map((item) => (
+            <li>
+              <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}
+                 class="text-sm text-ink-soft hover:text-[var(--color-brand)] transition-colors font-mono">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 pt-5 border-t border-[var(--color-border)]">
+          <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">Registered Office</div>
+          <div class="text-xs text-ink-soft leading-relaxed">
+            Ragadi, Jajpur Road<br/>
+            Odisha 755019, India
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div>
-      <h4 class="font-semibold mb-3">Platforms</h4>
-      <ul class="space-y-2 text-sm text-gray-400">
-        <li><a href="https://cyberdudebivash.in">AI Security Hub</a></li>
-        <li><a href="https://intel.cyberdudebivash.com">Sentinel APEX</a></li>
-        <li><a href="https://tools.cyberdudebivash.com">Tools Store</a></li>
-        <li><a href="https://blog.cyberdudebivash.in">Threat Intel Blog</a></li>
-      </ul>
+
+    <div class="pt-8 border-t border-[var(--color-border)] flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+      <div class="text-xs text-ink-muted">
+        &copy; {year} CYBERDUDEBIVASH PRIVATE LIMITED · GSTIN 21ARKPN8270G1ZP · All rights reserved.
+      </div>
+      <div class="flex items-center gap-6 text-xs font-mono text-ink-muted">
+        <a href="/privacy" class="hover:text-[var(--color-brand)] transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-[var(--color-brand)] transition-colors">Terms</a>
+        <a href="/security" class="hover:text-[var(--color-brand)] transition-colors">Security</a>
+      </div>
     </div>
-    <div>
-      <h4 class="font-semibold mb-3">Company</h4>
-      <ul class="space-y-2 text-sm text-gray-400">
-        <li><a href="/services">Services</a></li>
-        <li><a href="/pricing">Pricing</a></li>
-        <li><a href="/press">Press</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="font-semibold mb-3">Connect</h4>
-      <ul class="space-y-2 text-sm text-gray-400">
-        <li>bivash@cyberdudebivash.com</li>
-        <li>contact@cyberdudebivash.in</li>
-        <li>+91 8179881447</li>
-        <li>Ragadi, Jajpur Road, Odisha 755019</li>
-      </ul>
-    </div>
-  </div>
-  <div class="border-t border-[#1A2F4A] mt-8 pt-6 text-center text-xs text-gray-500">
-    <p>© {year} CYBERDUDEBIVASH PRIVATE LIMITED - GSTIN: 21ARKPN8270G1ZP</p>
-    <p class="mt-2">connect.cyberdudebivash.com - Connect. Protect. Grow.</p>
   </div>
 </footer>

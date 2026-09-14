@@ -1,0 +1,30 @@
+---
+const stats = [
+  { value: '260',  label: 'CVEs Tracked Today',     accent: 'brand' },
+  { value: '265+', label: 'Business Interactions',  accent: 'success' },
+  { value: '5.0',  label: 'Google Rating',          accent: 'warning' },
+  { value: '24/7', label: 'SOC Monitoring',         accent: 'ai' },
+];
+const accentMap = {
+  brand:   'var(--color-brand)',
+  success: 'var(--color-success)',
+  warning: 'var(--color-warning)',
+  ai:      'var(--color-ai)',
+};
+---
+
+<section class="relative border-y border-[var(--color-border)] bg-[var(--color-abyss)]">
+  <div class="max-w-[1400px] mx-auto px-6 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {stats.map((stat, i) => (
+        <div class="reveal text-center md:text-left" style={`transition-delay: ${i * 80}ms`}>
+          <div class="font-display text-4xl lg:text-5xl font-bold tracking-tight counter-in"
+               style={`color: ${accentMap[stat.accent as keyof typeof accentMap]}; text-shadow: 0 0 40px ${accentMap[stat.accent as keyof typeof accentMap]}40;`}>
+            {stat.value}
+          </div>
+          <div class="mt-2 text-xs font-mono text-ink-muted uppercase tracking-wider">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

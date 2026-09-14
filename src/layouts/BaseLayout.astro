@@ -1,24 +1,84 @@
 ---
-import '../styles/global.css';
+import '../styles/dashboard.css';
 
 interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
-const { title, description } = Astro.props;
-const siteUrl = "https://connect.cyberdudebivash.com";
+
+const {
+  title = "CYBERDUDEBIVASH Connect Hub — India's 1st AI-Native Cybersecurity Platform",
+  description = 'Real-time Threat Intelligence, AI Security, SOC Operations & Enterprise Cyber Defense. Serving customers across the globe from India.'
+} = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "CYBERDUDEBIVASH PRIVATE LIMITED",
+  "url": "https://connect.cyberdudebivash.com",
+  "logo": "https://connect.cyberdudebivash.com/favicon.svg",
+  "description": description,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "29, Korai-Sukinda-Ramchandrapur Rd, Ragadi",
+    "addressLocality": "Jajpur Road",
+    "addressRegion": "Odisha",
+    "postalCode": "755019",
+    "addressCountry": "IN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-8179881447",
+    "contactType": "customer service",
+    "email": "contact@cyberdudebivash.in"
+  },
+  "sameAs": [
+    "https://cyberdudebivash.in",
+    "https://intel.cyberdudebivash.com",
+    "https://tools.cyberdudebivash.com",
+    "https://blog.cyberdudebivash.in",
+    "https://www.linkedin.com/company/cyberdudebivash/",
+    "https://x.com/cyberbivash"
+  ]
+};
 ---
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} | CYBERDUDEBIVASH Connect Hub</title>
-  <meta name="description" content={description} />
-  <link rel="canonical" href={siteUrl + Astro.url.pathname} />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-</head>
-<body class="bg-[#0A1929] text-white antialiased">
-  <slot />
-</body>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#050B14" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://connect.cyberdudebivash.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="bg-void text-ink antialiased">
+    <slot />
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -80px 0px' }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
+  </body>
 </html>

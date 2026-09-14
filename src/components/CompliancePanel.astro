@@ -1,0 +1,61 @@
+---
+const compliance = [
+  { label: 'GSTIN',           value: '21ARKPN8270G1ZP' },
+  { label: 'MSME Udyam',      value: 'UDYAM-OD-19-0133456' },
+  { label: 'PAN',             value: 'ARKPN8270G' },
+  { label: 'Startup India',   value: 'IN-0426-9439SC' },
+  { label: 'eMudhra Verified', value: 'Active Profile' },
+];
+
+const corporate = {
+  name: 'CYBERDUDEBIVASH PRIVATE LIMITED',
+  address: '29, Korai-Sukinda-Ramchandrapur Rd, Ragadi, Jajpur Road, Odisha 755019',
+  phone: '+91 8179881447',
+};
+---
+
+<section class="relative py-20 bg-[var(--color-abyss)] border-y border-[var(--color-border)]">
+  <div class="max-w-[1400px] mx-auto px-6">
+    <div class="reveal mb-12 max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass mb-6 text-xs font-mono text-ink-muted tracking-wider">
+        <span class="text-[var(--color-success)]">◆</span> VERIFIED & COMPLIANT
+      </div>
+      <h2 class="font-display text-3xl lg:text-5xl font-bold tracking-tight mb-4">
+        Trust, verified. <span class="text-gradient-cyan">Enterprise-ready.</span>
+      </h2>
+      <p class="text-base text-ink-soft leading-relaxed">
+        Registered Indian private limited company with full statutory compliance, verified digital identity, and MSME recognition.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+      {compliance.map((item, i) => (
+        <div class="reveal glass rounded-lg p-4 border-[var(--color-border)]" style={`transition-delay: ${i * 60}ms`}>
+          <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">{item.label}</div>
+          <div class="text-sm font-mono text-ink break-all">{item.value}</div>
+          <div class="mt-3 flex items-center gap-1.5 text-[10px] font-mono text-[var(--color-success)]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-success)]"></span>
+            <span>VERIFIED</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="reveal glass rounded-xl p-6 border-[var(--color-border-hi)]">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div>
+          <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">Registered Entity</div>
+          <div class="text-sm text-ink font-semibold">{corporate.name}</div>
+        </div>
+        <div>
+          <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">Registered Address</div>
+          <div class="text-sm text-ink-soft">{corporate.address}</div>
+        </div>
+        <div>
+          <div class="text-[10px] font-mono text-ink-muted uppercase tracking-wider mb-2">Direct Line</div>
+          <a href={`tel:${corporate.phone.replace(/\s/g, '')}`} class="text-sm text-[var(--color-brand)] hover:underline font-mono">{corporate.phone}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
