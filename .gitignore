@@ -36,3 +36,5 @@ scaffold*.py
 deepseek_powershell_*.ps1growing-group/
 
 wrangler.toml.bak-*
+
+growing-group/
