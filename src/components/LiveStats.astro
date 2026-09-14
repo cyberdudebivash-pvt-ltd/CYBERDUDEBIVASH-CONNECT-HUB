@@ -1,10 +1,10 @@
 ---
-let stats = { cves: '—' };
+let stats = { cves: '--' };
 try {
   const res = await fetch('https://intel.cyberdudebivash.com/api/v1/intel/latest.json');
   if (res.ok) {
     const data = await res.json();
-    stats.cves = data.count || data.total || '—';
+    stats.cves = data.count || data.total || '--';
   }
 } catch (e) {}
 ---
